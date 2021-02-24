@@ -1,0 +1,27 @@
+==> bcrypt_elixir
+
+Microsoft (R) Program Maintenance Utility Vers„o 14.28.29337.0
+Direitos autorais da Microsoft Corporation. Todos os direitos reservados.
+	del /Q /F priv
+	erl -eval "io:format(\"~s~n\", [lists:concat([\"ERTS_INCLUDE_PATH=\", code:root_dir(), \"/erts-\", erlang:system_info(version), \"/include\"])])" -s init stop -noshell > Makefile.auto.win
+	nmake /                   /F Makefile.win priv\bcrypt_nif.dll
+
+Microsoft (R) Program Maintenance Utility Vers„o 14.28.29337.0
+Direitos autorais da Microsoft Corporation. Todos os direitos reservados.
+	if NOT EXIST "priv" mkdir "priv"
+	cl /O2 /EHsc /I"c_src" /I"c:/Program Files/erl10.3/erts-10.3/include" /LD /MD /Fepriv\bcrypt_nif.dll  c_src\bcrypt_nif.c c_src\blowfish.c
+Microsoft (R) C/C++ Optimizing Compiler Vers∆o 19.28.29337 para x64
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+bcrypt_nif.c
+blowfish.c
+Gerando C¢digo...
+Microsoft (R) Incremental Linker Version 14.28.29337.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/dll 
+/implib:priv\bcrypt_nif.lib 
+/out:priv\bcrypt_nif.dll 
+bcrypt_nif.obj 
+blowfish.obj 
+   Criando biblioteca priv\bcrypt_nif.lib e objeto priv\bcrypt_nif.exp
