@@ -18,13 +18,10 @@ defmodule RocketpayWeb.Router do
 
     post "/users", UsersController, :create
 
-    post "/account/:id/deposit", AccountsController, :deposit
-    post "/account/:id/withdraw", AccountsController, :withdraw
-    post "/account/transaction", AccountsController, :transaction
   end
 
   scope "/api", RocketpayWeb do
-    pipe_through [:api, :basic_auth]
+    pipe_through [:api, :auth]
 
     post "/account/:id/deposit", AccountsController, :deposit
     post "/account/:id/withdraw", AccountsController, :withdraw

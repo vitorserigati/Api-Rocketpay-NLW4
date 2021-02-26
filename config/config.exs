@@ -23,7 +23,7 @@ config :rocketpay, Rocketpay.Repo,
   migration_foreign_key: [type: :binary_id]
 
 config :rocketpay, :basic_auth,
-username: "banana"
+username: "banana",
 password: "nanica123"
 
 
