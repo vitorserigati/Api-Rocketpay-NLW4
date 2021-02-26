@@ -1,5 +1,5 @@
 defmodule RocketpayWeb.AccountsControllerTest do
-  use RocketpayWeb.ConnCase
+  use RocketpayWeb.ConnCase, async: true
 
   alias Rocketpay.{Account, User}
 
@@ -44,6 +44,8 @@ defmodule RocketpayWeb.AccountsControllerTest do
         |> json_response(:bad_request)
 
       expected_response = %{"message" => "Invalid deposit value"}
+
+      assert response == expected_response
 
     end
   end
